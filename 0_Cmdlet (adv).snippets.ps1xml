@@ -1,0 +1,75 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>0.Cmdlet (adv)</Title>
+                <Description>Slimmed down advanced function</Description>
+                <Author>Illbatting</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[<#
+.Synopsis
+   Short description
+.Description
+   Short description
+.Example
+   Example
+#>
+function Verb-Noun
+{
+    [CmdletBinding( DefaultParameterSetName = 'Default',
+                    SupportsShouldProcess = $true, 
+                    PositionalBinding = $false,
+                    ConfirmImpact = 'Medium')]
+    [OutputType([psobject])]
+    Param
+    (
+        #
+        [Parameter( Mandatory = $true, 
+                    ValueFromPipeline = $true,
+                    ValueFromPipelineByPropertyName = $true, 
+                    ValueFromRemainingArguments = $false, 
+                    Position = 0,
+                    ParameterSetName = 'Default')]
+        [ValidateNotNull()]
+        [ValidateNotNullOrEmpty()]
+        [Alias("")]
+        [string[]]
+        $P1,
+
+        # 
+        [Parameter( Mandatory = $false,
+                    ValueFromPipeline = $false,
+                    ValueFromPipelineByPropertyName = $false,
+                    Position = 1,
+                    ParameterSetName = 'Default')]
+        [Alias("")]
+        [string]
+        $P2
+    )
+
+    begin {}
+
+    process
+    {
+        foreach($singleItem in $collection)
+        {
+            if ($pscmdlet.ShouldProcess("Target", "Operation"))
+            {
+            }
+        }
+    }
+    
+    end {}
+}]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+

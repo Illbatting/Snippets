@@ -1,0 +1,26 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>0.PSCustomObject</Title>
+                <Description>A simple PSCustomObject template</Description>
+                <Author>Illbatting</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[$returnObject = [PSCustomObject]@{
+    P1 = ""
+    P2 = ""
+}
+Write-Output $returnObject
+]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+

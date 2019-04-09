@@ -1,0 +1,26 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>0.Host Width</Title>
+                <Description>Sets a more suitable Host Width for running Start-Transcript.</Description>
+                <Author>Illbatting</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[try {
+    $Host.UI.RawUI.BufferSize = New-Object System.Management.Automation.Host.Size 160, $Host.UI.RawUI.BufferSize.Height
+} catch {
+    throw $_.Exception
+}
+]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+
